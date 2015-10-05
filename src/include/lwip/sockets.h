@@ -368,6 +368,11 @@ int lwip_fcntl(int s, int cmd, int val);
 #define fcntl(a,b,c)          lwip_fcntl(a,b,c)
 #endif /* LWIP_POSIX_SOCKETS_IO_NAMES */
 
+#define inet_ntop(af,src,dst,size) \
+    (((af) == AF_INET) ? ipaddr_ntoa_r((const ip_addr_t*)(src),(dst),(size)) : NULL)
+#define inet_pton(af,src,dst) \
+    (((af) == AF_INET) ? ipaddr_aton((src),(ip_addr_t*)(dst)) : 0)
+
 #endif /* LWIP_COMPAT_SOCKETS */
 
 #ifdef __cplusplus

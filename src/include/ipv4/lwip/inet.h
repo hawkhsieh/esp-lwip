@@ -89,6 +89,14 @@ struct in_addr {
 
 #define IN_LOOPBACKNET      IP_LOOPBACKNET
 
+#ifndef INET_ADDRSTRLEN
+#define INET_ADDRSTRLEN     16
+#endif
+
+#ifndef INET6_ADDRSTRLEN
+#define INET6_ADDRSTRLEN    48
+#endif
+
 #define inet_addr_from_ipaddr(target_inaddr, source_ipaddr) ((target_inaddr)->s_addr = ip4_addr_get_u32(source_ipaddr))
 #define inet_addr_to_ipaddr(target_ipaddr, source_inaddr)   (ip4_addr_set_u32(target_ipaddr, (source_inaddr)->s_addr))
 /* ATTENTION: the next define only works because both s_addr and ip_addr_t are an u32_t effectively! */
