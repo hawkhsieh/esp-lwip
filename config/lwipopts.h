@@ -56,8 +56,8 @@ static inline uint32_t sys_now(void)
 #define ESP_TIMEWAIT_THRESHOLD              10000
 
 #define TCP_TMR_INTERVAL                    125
-#define TCP_KEEPIDLE_DEFAULT                3000
-#define TCP_KEEPINTVL_DEFAULT               1000
+#define TCP_KEEPIDLE_DEFAULT                60
+#define TCP_KEEPINTVL_DEFAULT               20
 #define TCP_KEEPCNT_DEFAULT                 3
 
 #define LWIP_NETCONN                        0
